@@ -1,0 +1,38 @@
+
+<div id="container">
+    <div id="add">
+        <button mat-raised-button color="primary" data-toggle="modal" data-target="#addList">Add new list</button>
+    </div>
+    <div id="list">
+        <div class="list-group">
+            <a *ngFor="let grocerylist of grocerylists; let i = index" [ngClass]="{'active': (idSelected == i && idSelected == 0)  ? true : idSelected === (grocerylist.id) }" (click)="selectList(grocerylist)" class="list-group-item list-group-item-action active">
+             {{grocerylist.title}}
+             <div (click)="deleteList(grocerylist.id)"  mat-raised-button color="warn"><i class="fa fa-trash-alt"></i></div>
+            </a>
+          </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addList" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a new List</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <mat-form-field class="w-100">
+                <mat-label>Name of the list</mat-label>
+                <input matInput  [(ngModel)]="titleList">
+              </mat-form-field>
+        </div>
+        <div class="modal-footer">
+            <button mat-raised-button color="primary" data-dismiss="modal" (click)="insertList()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+
+#container{
+    width: 30%;
+    height: 100vh;
+    display: inline-block;
+    padding: 40px 0;
+    #add{
+        button{
+            display: block;
+            margin: auto;
+        }
+      
+    }
+    #list{
+        margin-top: 20px;
+        .list-group{
+            a{
+                cursor: pointer;
+                div{
+                    color: #f44336;
+                    display: inline;
+                    float: right;
+                    font-size: 20px;
+                }
+            }
+            .active{
+                color: white;
+                font-weight: 700;
+                div{
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.modal-footer{
+    button{
+        display: block;
+        margin: auto;
+    }
+}
